@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Layout from "@/components/wrapper/Layout";
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   keywords: ["nextjs", "next14", "pwa", "next-pwa"],
   themeColor: [
     {
-      media: "(prefers-color-scheme: dark)",
+      media: "",
       color: "#fff",
     },
   ],
@@ -24,8 +24,6 @@ export const metadata: Metadata = {
       url: "",
     },
   ],
-  viewport:
-    "minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, viewport-fit=cover",
   icons: [
     {
       rel: "apple-touch-icon",
@@ -33,6 +31,13 @@ export const metadata: Metadata = {
     },
     { rel: "icon", url: "/assets/icon/icon-128.png" },
   ],
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  minimumScale: 1,
+  viewportFit: "cover",
 };
 
 export default function RootLayout({
